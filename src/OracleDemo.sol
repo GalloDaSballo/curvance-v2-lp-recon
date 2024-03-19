@@ -19,7 +19,7 @@ contract OracleDemo {
     ) external pure returns (uint256) {
         uint256 a = FixedPointMathLib.sqrt(reserve0 * reserve1);
         uint256 b = FixedPointMathLib.sqrt(price0 * price1);
-        uint256 c = 2 * ((a * b) / total_supply);
+        uint256 c = 2 * a * b / total_supply;
 
         return c;
     }
