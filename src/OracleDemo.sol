@@ -17,10 +17,23 @@ contract OracleDemo {
         uint256 reserve0,
         uint256 reserve1
     ) external pure returns (uint256) {
-        uint256 a = FixedPointMathLib.sqrt(reserve0 * reserve1);
-        uint256 b = FixedPointMathLib.sqrt(price0 * price1);
+        uint256 a = sqrt(reserve0 * reserve1);
+        uint256 b = sqrt(price0 * price1);
         uint256 c = 2 * a * b / total_supply;
 
         return c;
+    }
+
+    function sqrt(uint256 y) internal pure returns (uint256 z) {
+        if (y > 3) {
+            z = y;
+            uint256 x = y / 2 + 1;
+            while (x < z) {
+                z = x;
+                x = (y / x + x) / 2;
+            }
+        } else if (y != 0) {
+            z = 1;
+        }
     }
 }

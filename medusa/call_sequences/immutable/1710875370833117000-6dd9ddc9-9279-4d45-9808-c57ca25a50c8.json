@@ -1,0 +1,1434 @@
+[
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000030000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 1,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x11463691000000000000000000000000000000000000000000000000000000000000003896d1cf1ea937ef1fb0ec692e2dc911e9ad5798934b55a63ecd4f634a2b2cd106",
+   "dataAbiValues": {
+    "methodName": "pool_approve",
+    "inputValues": [
+     "0x0000000000000000000000000000000000000038",
+     "68217627812141613478874939976308610897677819085340725860666000243810169049350"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 36347,
+  "blockTimestampDelay": 134276
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 0,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x0cf491140000000000000000000000000000000000000000000000000000000000000021000000000000000000000000ea06e689a247308fd0d500be3e1152b0253d6d7c00000000000000000000000000000000000000000000000000000000000020a2fffffffffffffffffffffffffffffffffffffffffffffffffffffffa4a1ec610000000000000000000000000000000000000000000000000000000000000002f5247255bea9c8ae9b9313788a380d9443511505ae9ac4f58a4dae53e74a67a7433fad655bd8122c0aa582ab4a7ce4211de931c65b9554ca1e7f6a66fccb90531",
+   "dataAbiValues": {
+    "methodName": "pool_permit",
+    "inputValues": [
+     "0x0000000000000000000000000000000000000021",
+     "0xeA06E689A247308Fd0D500Be3E1152B0253D6d7C",
+     "8354",
+     "115792089237316195423570985008687907853269984665640564039457584007888603366928",
+     "47",
+     "5247255bea9c8ae9b9313788a380d9443511505ae9ac4f58a4dae53e74a67a74",
+     "33fad655bd8122c0aa582ab4a7ce4211de931c65b9554ca1e7f6a66fccb90531"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 24485,
+  "blockTimestampDelay": 360576
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000030000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 2,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x8ed0fa7c",
+   "dataAbiValues": {
+    "methodName": "pool_claimFees",
+    "inputValues": []
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 40925,
+  "blockTimestampDelay": 225551
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 1,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0xa9a765b4",
+   "dataAbiValues": {
+    "methodName": "pool_sync",
+    "inputValues": []
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 137,
+  "blockTimestampDelay": 317592
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000010000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 0,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x114636910000000000000000000000005363de5c93d9930d5186ad4707d7bc717c1c0ed4ffffffffffffffffffffffffbdfffffffffffffffffffffffffffffffffff81c",
+   "dataAbiValues": {
+    "methodName": "pool_approve",
+    "inputValues": [
+     "0x5363dE5c93d9930D5186AD4707d7BC717c1C0eD4",
+     "115792089237316195423570985008311114462395611257041176543522917291908084529180"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 7686,
+  "blockTimestampDelay": 401496
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 2,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0xd8ecb3060000000000000000000000000000000000000000000000000000000000000032",
+   "dataAbiValues": {
+    "methodName": "pool_burn",
+    "inputValues": [
+     "0x0000000000000000000000000000000000000032"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 0,
+  "blockTimestampDelay": 155981
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000010000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 1,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x1146369100000000000000000000000083a9850192b0d4fffd67bb5c94a5194977048a7ccaab93b9d1f53e4b8c3aeecc1441c5db17d2fe828a734919e597b8105af3b765",
+   "dataAbiValues": {
+    "methodName": "pool_approve",
+    "inputValues": [
+     "0x83a9850192b0D4fFfd67bB5c94a5194977048A7C",
+     "91670345828311182024759523907408357517822879881436146488633477857691477194597"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 1,
+  "blockTimestampDelay": 426388
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000010000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 2,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x3d40f841000000000000000000000000d3994a9dd6190f78bd80672fe6d07273260fb950",
+   "dataAbiValues": {
+    "methodName": "pool_mint",
+    "inputValues": [
+     "0xD3994A9DD6190F78Bd80672Fe6D07273260FB950"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 0,
+  "blockTimestampDelay": 601547
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 3,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x2b39ee64ffffffffffffffffffffffffffbe000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000fe575a8700000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000034bca1cbb3ad291f750a81fc1c73e8a68b9a2f04d7ca87766d12e420b0adcb108db749dd9519bf37219d198320666fba7429ad2239000000000000000000000000",
+   "dataAbiValues": {
+    "methodName": "pool_swap",
+    "inputValues": [
+     "115792089237316195423570985008686436004086881644513222682051589216053734932480",
+     "0",
+     "0x00000000000000000000000000000000fE575a87",
+     "bca1cbb3ad291f750a81fc1c73e8a68b9a2f04d7ca87766d12e420b0adcb108db749dd9519bf37219d198320666fba7429ad2239"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 23634,
+  "blockTimestampDelay": 549792
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 4,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x11463691000000000000000000000000e3c17f72ac59c330990ce8807327b3b8e9155ab800000000000000000000000000fffffffffffffffffffffff21f494c589c00ff",
+   "dataAbiValues": {
+    "methodName": "pool_approve",
+    "inputValues": [
+     "0xe3C17F72ac59C330990cE8807327B3b8e9155aB8",
+     "5708990770823839524233143876797980545530986751"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 33339,
+  "blockTimestampDelay": 601547
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000010000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 3,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x8ed0fa7c",
+   "dataAbiValues": {
+    "methodName": "pool_claimFees",
+    "inputValues": []
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 324,
+  "blockTimestampDelay": 518990
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 5,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x39aab2c000000000000000000000000000000000000000000000000000000000000009da000000000000000000000000a0b481fb4ed14ce8e599e0d1dd53b011cafb02250000000000000000000000000000000000000000000000000000000000000001",
+   "dataAbiValues": {
+    "methodName": "pool_initialize",
+    "inputValues": [
+     "0x00000000000000000000000000000000000009Da",
+     "0xa0b481Fb4Ed14cE8E599E0D1dd53B011Cafb0225",
+     true
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 1724,
+  "blockTimestampDelay": 367981
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000030000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 3,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0xd6dd52430000000000000000000000009800b973b94629b6cebede021260a15c6594895500000000000000000000000000000000000000000000000000000000000000fc",
+   "dataAbiValues": {
+    "methodName": "pool_transfer",
+    "inputValues": [
+     "0x9800b973B94629B6cEbEde021260A15c65948955",
+     "252"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 23821,
+  "blockTimestampDelay": 446637
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000010000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 4,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x3d40f8410000000000000000000000000000000000000000000000000000000000000024",
+   "dataAbiValues": {
+    "methodName": "pool_mint",
+    "inputValues": [
+     "0x0000000000000000000000000000000000000024"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 7676,
+  "blockTimestampDelay": 580136
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000010000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 5,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x0cf4911400000000000000000000000000000000000000000000000000000000000000210000000000000000000000004af0f67f82b8fa759dfc66467a69a638da62c174f1564fec575583e14b49c2c732e8eb533622a703b7c05255c7cb3f2d051c770ad357afa0ab72e504bdd35d9bf9701cdeb7329ffafaa52480ceeb3138ef5377ac00000000000000000000000000000000000000000000000000000000000000cdaa3a1f1aafcb1f4cf7e3e747e8e0f91aa279995f163bcf7ea1d2cb8cf536c7fc248f6ffe91391ea9943d841a5d834b0c045f74271942c5799aa8a924d692163b",
+   "dataAbiValues": {
+    "methodName": "pool_permit",
+    "inputValues": [
+     "0x0000000000000000000000000000000000000021",
+     "0x4af0F67f82B8fa759DFC66467A69a638DA62C174",
+     "109159896965844298822490783873962654820080907474172444260034293114557450450698",
+     "95592938882962749249992299783469045462431725860007743177121450144416673265580",
+     "205",
+     "aa3a1f1aafcb1f4cf7e3e747e8e0f91aa279995f163bcf7ea1d2cb8cf536c7fc",
+     "248f6ffe91391ea9943d841a5d834b0c045f74271942c5799aa8a924d692163b"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 29819,
+  "blockTimestampDelay": 489274
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000030000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 4,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0xa9a765b4",
+   "dataAbiValues": {
+    "methodName": "pool_sync",
+    "inputValues": []
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 23802,
+  "blockTimestampDelay": 224996
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000010000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 6,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x6d8511da0000000000000000000000000200000000000000000000000000000000000000",
+   "dataAbiValues": {
+    "methodName": "pool_skim",
+    "inputValues": [
+     "0x0200000000000000000000000000000000000000"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 19520,
+  "blockTimestampDelay": 430097
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 6,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x39aab2c000000000000000000000000073b01951151a64c0ad8a060c78a3557117cc62840000000000000000000000003458573f18b95e301954598404554133976988170000000000000000000000000000000000000000000000000000000000000001",
+   "dataAbiValues": {
+    "methodName": "pool_initialize",
+    "inputValues": [
+     "0x73b01951151A64c0Ad8a060C78a3557117Cc6284",
+     "0x3458573F18B95E30195459840455413397698817",
+     true
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 13679,
+  "blockTimestampDelay": 360560
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000030000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 5,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x0cf49114000000000000000000000000cb00146fc685e73ed7a3c0df2fb5d01cf30b62050000000000000000000000000000000000000000000000000000000000000061ffffffffffffffffffffffffffffffffffffffffffffffffffffffffa6a1b6080000000000000000000000007109709ecfa91a80626ff3989d68f67f5b1dd12d0000000000000000000000000000000000000000000000000000000000000003f734f4fd50e57a6c8074e92a038a5886db3c180ba97ca6cdea58ee41daa97cfcdd00902174f01c3987ff37c988298fbc7b4d60297d0098d42eeff5ccf07d0a65",
+   "dataAbiValues": {
+    "methodName": "pool_permit",
+    "inputValues": [
+     "0xCB00146fc685e73ED7a3C0DF2Fb5D01cf30b6205",
+     "0x0000000000000000000000000000000000000061",
+     "115792089237316195423570985008687907853269984665640564039457584007911630288392",
+     "645326474426547203313410069153905908525362434349",
+     "3",
+     "f734f4fd50e57a6c8074e92a038a5886db3c180ba97ca6cdea58ee41daa97cfc",
+     "dd00902174f01c3987ff37c988298fbc7b4d60297d0098d42eeff5ccf07d0a65"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 708,
+  "blockTimestampDelay": 2048
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 7,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0xa9a765b4",
+   "dataAbiValues": {
+    "methodName": "pool_sync",
+    "inputValues": []
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 9407,
+  "blockTimestampDelay": 360205
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 8,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x1146369100000000000000000000000054410b6c57341775965fd52912438b8e2aa2b269cdbf3148867216ac145058195935272b6f9bade201ddbe9cdaec16c37249bb38",
+   "dataAbiValues": {
+    "methodName": "pool_approve",
+    "inputValues": [
+     "0x54410b6c57341775965FD52912438B8E2aA2B269",
+     "93061941889788214192220395767247310754124984284738900087353894756986774993720"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 31531,
+  "blockTimestampDelay": 359313
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000010000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 7,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x8ed0fa7c",
+   "dataAbiValues": {
+    "methodName": "pool_claimFees",
+    "inputValues": []
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 45111,
+  "blockTimestampDelay": 360609
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 9,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0xa9a765b4",
+   "dataAbiValues": {
+    "methodName": "pool_sync",
+    "inputValues": []
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 4,
+  "blockTimestampDelay": 360461
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000030000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 6,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x39aab2c0000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000050000000000000000000000000000000000000000000000000000000000000000",
+   "dataAbiValues": {
+    "methodName": "pool_initialize",
+    "inputValues": [
+     "0x000000000000000000000000000000000000000A",
+     "0x0000000000000000000000000000000000000005",
+     false
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 17570,
+  "blockTimestampDelay": 386095
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000030000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 7,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x8ed0fa7c",
+   "dataAbiValues": {
+    "methodName": "pool_claimFees",
+    "inputValues": []
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 0,
+  "blockTimestampDelay": 0
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 10,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x39aab2c00000000000000000000000005615deb798bb3e4dfa0139dfa1b3d433cc23b72f0000000000000000000000002f4ea19c35848bfa29e2a1a159659b166a20bee90000000000000000000000000000000000000000000000000000000000000001",
+   "dataAbiValues": {
+    "methodName": "pool_initialize",
+    "inputValues": [
+     "0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f",
+     "0x2f4Ea19c35848BfA29e2A1A159659B166a20bEE9",
+     true
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 623,
+  "blockTimestampDelay": 513121
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000030000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 8,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x2b39ee64ffffffffffffffffffffffffbdfffffffffffffffffffffffffffffffffff80009a00ebe845066f55de98b2e03471fecc5b02e62cac6a64a77064008f6e2c1db000000000000000000000000cb4b56011dddd7b53dace32892da98ed9879abf50000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000003513dcdd924511fa3096b5464c95b8f2dd2cdc0cba2d5cc2baa347509eef7eaeaf0c9f1d21a1509d348ef819ec7984a61662fa8054ae0000000000000000000000",
+   "dataAbiValues": {
+    "methodName": "pool_swap",
+    "inputValues": [
+     "115792089237316195423570985008311114462395611257041176543522917291908084529152",
+     "4353612928386958853876964871303014426962435962374798690685034512461886308827",
+     "0xCb4B56011dDdd7b53Dace32892da98Ed9879ABF5",
+     "13dcdd924511fa3096b5464c95b8f2dd2cdc0cba2d5cc2baa347509eef7eaeaf0c9f1d21a1509d348ef819ec7984a61662fa8054ae"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 31,
+  "blockTimestampDelay": 45
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 11,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x0cf4911400000000000000000000000000000000000000000000000000000000000000410000000000000000000000004200000000000000000000000000000000000000f3816822aef076a602c8b60cdbb73ed2e3ec12f5a921e4c287d263509112c0059a92e7f01310b6eed673f4be38fb31417c96530ce8ad1b784107619e32944af200000000000000000000000000000000000000000000000000000000000000bfc6303059fe6f7d1bc0a768dde07412272255ae5a0454ec3d57a276be1f203c6a7eba77183130bef2c88934487e73fba4280906fea3c6e807dc58cb339b2ffaef",
+   "dataAbiValues": {
+    "methodName": "pool_permit",
+    "inputValues": [
+     "0x0000000000000000000000000000000000000041",
+     "0x4200000000000000000000000000000000000000",
+     "110140664193771656539514260184753250718134681973236776901276764153376096305157",
+     "69915739129081786179864040895647993000199875589790011243191414221235528420082",
+     "191",
+     "c6303059fe6f7d1bc0a768dde07412272255ae5a0454ec3d57a276be1f203c6a",
+     "7eba77183130bef2c88934487e73fba4280906fea3c6e807dc58cb339b2ffaef"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 48093,
+  "blockTimestampDelay": 370516
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000030000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 9,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x11463691000000000000000000000000000000000000000000000000273a5c65484d6edcca3e688bb1c630ca7abe23c9dd0b85aa2874bc42ddd353f652dbdb08e72d711c",
+   "dataAbiValues": {
+    "methodName": "pool_approve",
+    "inputValues": [
+     "0x000000000000000000000000273A5c65484d6EDC",
+     "91477461479610529737350809271445980310879212410870783816684863264106964939036"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 51278,
+  "blockTimestampDelay": 199708
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000010000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 8,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0xd8ecb3060000000000000000000000001c62984581fc80d3666401973c26ee4028986783",
+   "dataAbiValues": {
+    "methodName": "pool_burn",
+    "inputValues": [
+     "0x1c62984581FC80d3666401973C26eE4028986783"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 23497,
+  "blockTimestampDelay": 482264
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000010000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 9,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x114636910000000000000000000000008309585df2719bf0ab1409acc380f44c9cc5c48f576f04a000050a746c98f58c59fee76cd24a29bd068c638c3247328fd3a99cef",
+   "dataAbiValues": {
+    "methodName": "pool_approve",
+    "inputValues": [
+     "0x8309585DF2719bf0Ab1409Acc380f44c9cc5c48f",
+     "39547369771513504036304163119946215146866866400945116396470511966891062959343"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 37118,
+  "blockTimestampDelay": 374845
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000030000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 10,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x2b39ee64b1e451f26a6de51d0dbf482d800cc98434df36347f6468805ad4172c43ebd246128cdc8efdf71d4591503f137bb02fece1a0e91c7f5cb23765da6df6c954900500000000000000000000000001375317aa980daabf22f990a378eccad9b40dc000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000",
+   "dataAbiValues": {
+    "methodName": "pool_swap",
+    "inputValues": [
+     "80462780906977116942584211241005860189889947230164543865825445434219247161926",
+     "8390512102822156192731514714694778736720512213079757207844658167986724835333",
+     "0x01375317AA980daaBF22f990a378ECCaD9B40dc0",
+     ""
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 37713,
+  "blockTimestampDelay": 360616
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000030000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 11,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x114636910000000000000000000000000000000000000000000000000000000000000004ffffffffffffffffffffffffa2ffffffffffffffffffffffffffffffffffe11f",
+   "dataAbiValues": {
+    "methodName": "pool_approve",
+    "inputValues": [
+     "0x0000000000000000000000000000000000000004",
+     "115792089237316195423570985008156971711583367589886881658822371817178747887903"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 52037,
+  "blockTimestampDelay": 291921
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000010000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 10,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x2b39ee64000000000000000000000000000000000000000000000000000000000000050713bea99a9b93e326b6edacad26a7f0b68d1e69327c81035ae16bfeca8b213da50000000000000000000000001ef10150c113e2b7b72c2460059736941debe7c200000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000029c4c6c1ea77e864a139c201b9fc036aa0cf42018dcc2b46f0c5025773fe13b02a79eee792424d51d3220000000000000000000000000000000000000000000000",
+   "dataAbiValues": {
+    "methodName": "pool_swap",
+    "inputValues": [
+     "1287",
+     "8930815628738591267251813128029774246524043478944131556726774623035453423013",
+     "0x1Ef10150c113E2b7b72c2460059736941dEBe7C2",
+     "c4c6c1ea77e864a139c201b9fc036aa0cf42018dcc2b46f0c5025773fe13b02a79eee792424d51d322"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 26607,
+  "blockTimestampDelay": 360607
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 12,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0xd6dd5243000000000000000000000000000000000000000000000000000000000000a86934df4476081e46e4e9d64627ca046c6cf6eb8ecf7dc69a21b9f94cd8619a73d0",
+   "dataAbiValues": {
+    "methodName": "pool_transfer",
+    "inputValues": [
+     "0x000000000000000000000000000000000000A869",
+     "23914747522655673923127300095512160337035944434775518690818184111653784286160"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 23086,
+  "blockTimestampDelay": 341612
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000030000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 12,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x6d8511da0000000000000000000000000000000000000000000000000000000000000144",
+   "dataAbiValues": {
+    "methodName": "pool_skim",
+    "inputValues": [
+     "0x0000000000000000000000000000000000000144"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 7599,
+  "blockTimestampDelay": 22507
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000010000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 11,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x2b39ee64e447ef7f6d997ed5549c3340716f6545b8879887cde5e8c1eaae09a7c68560c30000000000000000000000000000000000000000000000000000000000000507000000000000000000000000e8500b048339e5bf3f416e0d0fce06edd8d5644c0000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000003ae68af2aa259d2a2e17dc78306a79b2b38e9fee392dd425e00e6f1ab7cea8fef8cfde502bf4bdd3cb340a491a397cfb8fcb1b75d37cb58393afcb000000000000",
+   "dataAbiValues": {
+    "methodName": "pool_swap",
+    "inputValues": [
+     "103254428571416295663875924240596907965352915041844574244486382727497934790851",
+     "1287",
+     "0xE8500B048339E5BF3f416E0D0fCe06EdD8D5644C",
+     "e68af2aa259d2a2e17dc78306a79b2b38e9fee392dd425e00e6f1ab7cea8fef8cfde502bf4bdd3cb340a491a397cfb8fcb1b75d37cb58393afcb"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 8160,
+  "blockTimestampDelay": 101471
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 13,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x11463691000000000000000000000000955a877530de737f4ffc1e92ee4764822f5891b0456564570c39f5ae11ea404ae26db5747cddbd8f8558763ec92c50159ce61994",
+   "dataAbiValues": {
+    "methodName": "pool_approve",
+    "inputValues": [
+     "0x955A877530dE737f4FFC1E92eE4764822f5891B0",
+     "31388730627225627445972020137777484126546336209382405532870125396036797471124"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 24085,
+  "blockTimestampDelay": 360623
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000010000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 12,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0xd8ecb3060000000000000000000000000000000000000000000000000000000000aa36a7",
+   "dataAbiValues": {
+    "methodName": "pool_burn",
+    "inputValues": [
+     "0x0000000000000000000000000000000000aA36a7"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 23837,
+  "blockTimestampDelay": 326906
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 14,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0xd6dd52430000000000000000000000004c06a639ec540a1bf701fdd8841493f215622abffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffea070",
+   "dataAbiValues": {
+    "methodName": "pool_transfer",
+    "inputValues": [
+     "0x4c06A639EC540A1bF701fdD8841493F215622aBF",
+     "115792089237316195423570985008687907853269984665640564039457584007913129549936"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 2,
+  "blockTimestampDelay": 4
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000010000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 13,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x1146369100000000000000000000000000000000000000000000000000000000000027109b323ba580afc87604a92518855ba33c114936e1df802c2ca6d854710629f7a3",
+   "dataAbiValues": {
+    "methodName": "pool_approve",
+    "inputValues": [
+     "0x0000000000000000000000000000000000002710",
+     "70197245548623156423842694288477442599185628955616344803635048732366079653795"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 23658,
+  "blockTimestampDelay": 152734
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000030000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 13,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x114636910000000000000000000000000000000000000000000000000000000018160ddd2f8b39a7f2e392fb426cadb8fa85a00d44e4af124e9b5a5f6221c428132043e3",
+   "dataAbiValues": {
+    "methodName": "pool_approve",
+    "inputValues": [
+     "0x0000000000000000000000000000000018160ddD",
+     "21504693552849769309205583023829555027105690877875193419896476501600022578147"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 37855,
+  "blockTimestampDelay": 249618
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 15,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x0cf4911400000000000000000000000000000000000000000000000000000000000001a4000000000000000000000000cf30351389efdf9506d355217c6ea4e07703c74f0000000000000000000000007109709ecfa91a80626ff3989d68f67f5b1dd12dcc2331d565a9d301522d1538b406be1f54b98fcc157475a0588de7566192042d00000000000000000000000000000000000000000000000000000000000000ae564e8e33ce77053f63ab20ae078ab4c5e22179d87fb7eb8543dbaa891bd4f8b2e184cec7bdc35ae20bf3d552f4f8f836b5bec7454f247179e64a2c1d5b71cf5c",
+   "dataAbiValues": {
+    "methodName": "pool_permit",
+    "inputValues": [
+     "0x00000000000000000000000000000000000001a4",
+     "0xCf30351389efdF9506D355217C6eA4e07703c74F",
+     "645326474426547203313410069153905908525362434349",
+     "92334004696999622618695894085770626371168136870701461183437604944837073830957",
+     "174",
+     "564e8e33ce77053f63ab20ae078ab4c5e22179d87fb7eb8543dbaa891bd4f8b2",
+     "e184cec7bdc35ae20bf3d552f4f8f836b5bec7454f247179e64a2c1d5b71cf5c"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 43114,
+  "blockTimestampDelay": 324672
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000010000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 14,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x1146369100000000000000000000000007d060904e2af8c1088056dd49dfb252d086c51b77f95b9fdf07bb40abeb7c6ad7bef7fd20b0fcfdc5eeb351e9521ebce5de93ce",
+   "dataAbiValues": {
+    "methodName": "pool_approve",
+    "inputValues": [
+     "0x07d060904e2aF8c1088056Dd49DFb252D086c51B",
+     "54265806269575417511176015173419089432494620776035194685198940207524121318350"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 2978,
+  "blockTimestampDelay": 506428
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000030000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 14,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x11463691000000000000000000000000000000000000000000000000000000000000a86afeb1a1f58d0fac687d6343eb1a1f58d0fac687d6343eb1a1f58d0fac689cd8e4",
+   "dataAbiValues": {
+    "methodName": "pool_approve",
+    "inputValues": [
+     "0x000000000000000000000000000000000000a86a",
+     "115201313271819684222430316717827255262181872498979132590276677967056432060644"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 842,
+  "blockTimestampDelay": 63064
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000010000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 15,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x0cf4911400000000000000000000000000000000000000000000000000000000000021050000000000000000000000008134bd5acf40bad9317add250be5786522d628e0805a3a716019f27359aa622791dd996bc9dc6dc4511824aa49dc5ae1cd52c8b24919376aa70d970dbdc140447c5159b16acebf0812d3147a4a56d73cc35156150000000000000000000000000000000000000000000000000000000000000080b1085ab4da771bacaa9f042c4cc279a525a6b11f0a0103af6a9789c1c8005d6e6971ee65fc07f87273a65347c7477c7aae376dc63c9038be2144013f0968d054",
+   "dataAbiValues": {
+    "methodName": "pool_permit",
+    "inputValues": [
+     "0x0000000000000000000000000000000000002105",
+     "0x8134Bd5Acf40Bad9317ADd250be5786522D628e0",
+     "58055464212370893548906708137801214213056030827556964469143550427630748747954",
+     "33063391594594069490828499331800838775670956848987336814808987888832704763413",
+     "128",
+     "b1085ab4da771bacaa9f042c4cc279a525a6b11f0a0103af6a9789c1c8005d6e",
+     "6971ee65fc07f87273a65347c7477c7aae376dc63c9038be2144013f0968d054"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 36156,
+  "blockTimestampDelay": 558416
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 16,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0xa9a765b4",
+   "dataAbiValues": {
+    "methodName": "pool_sync",
+    "inputValues": []
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 14146,
+  "blockTimestampDelay": 390451
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000010000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 16,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x3d40f8410000000000000000000000000000000000000000000000000000000000000051",
+   "dataAbiValues": {
+    "methodName": "pool_mint",
+    "inputValues": [
+     "0x0000000000000000000000000000000000000051"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 23381,
+  "blockTimestampDelay": 537048
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 17,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x2b39ee64ee1e4fe9ba123fae5fc1b9a8a9db90e0e36fabc30301efeb92ed828aca3f92eb794e84600867129232e40bd3462c0241e534e7bdb9d7c73bc9b31d6b845de5ea000000000000000000000000000000000000000000000000000000000000000f00000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000019c0a87bf3ffcbcb1de585511846486c8b9b57e8c6d5ef0b805e00000000000000",
+   "dataAbiValues": {
+    "methodName": "pool_swap",
+    "inputValues": [
+     "107704014913985315215896949392884105446294817061354526169257874644985364583147",
+     "54868582369185503290050049759843163451969501520073085780523572757363578234346",
+     "0x000000000000000000000000000000000000000F",
+     "c0a87bf3ffcbcb1de585511846486c8b9b57e8c6d5ef0b805e"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 10012,
+  "blockTimestampDelay": 386818
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000010000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 17,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0xe9abe4c700000000000000000000000079f3bbe3ce184a04eda336e07230e0d5f1e69bfd00000000000000000000000000000000000000000000000000000000e47d60604af7b01e77c703171d4d4b06350213b2547a30bebe39e112e4d4fe6761b4d089",
+   "dataAbiValues": {
+    "methodName": "pool_transferFrom",
+    "inputValues": [
+     "0x79F3BBE3CE184A04EdA336e07230e0D5F1e69bFd",
+     "0x00000000000000000000000000000000e47d6060",
+     "33908777548931440348969833737968760735502852217638712799681711363695280705673"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 42175,
+  "blockTimestampDelay": 360598
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000030000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 15,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0xd8ecb306000000000000000000000000863d2932bd6028b2ff8ad8afc6233d2224ade282",
+   "dataAbiValues": {
+    "methodName": "pool_burn",
+    "inputValues": [
+     "0x863d2932bd6028B2fF8AD8AfC6233D2224Ade282"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 41254,
+  "blockTimestampDelay": 280493
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000010000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 18,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x2b39ee64ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe1060000000000000000000000000000000000000000000000000de0b6b3a76400140000000000000000000000003a2a2052b8213c20324ed89ce92005c97c327c9500000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000057d8e89032d19f0ec6195efa7f3ee65927f038e2ffeb1a7e5a13296ee3e7fa33ce7f4d5a16d30d763d9e0951613d5a5b214bbfb9da277aa3e395737e7b7381c3eeebcf7008bdf1d1bc080a95a9bbeee10a7d3230fa6140e4000000000000000000",
+   "dataAbiValues": {
+    "methodName": "pool_swap",
+    "inputValues": [
+     "115792089237316195423570985008687907853269984665640564039457584007913129632006",
+     "1000000000000000020",
+     "0x3A2a2052B8213c20324eD89Ce92005C97c327C95",
+     "d8e89032d19f0ec6195efa7f3ee65927f038e2ffeb1a7e5a13296ee3e7fa33ce7f4d5a16d30d763d9e0951613d5a5b214bbfb9da277aa3e395737e7b7381c3eeebcf7008bdf1d1bc080a95a9bbeee10a7d3230fa6140e4"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 255,
+  "blockTimestampDelay": 1799
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 18,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0xd6dd52430000000000000000000000004d61fb78b7a5a53852ec16d0ab7e910e6d3c6145da8c84167a5cb6476de71ab87adaaa89131e7368bc9581d4f187335a8a1e45dc",
+   "dataAbiValues": {
+    "methodName": "pool_transfer",
+    "inputValues": [
+     "0x4d61fb78B7A5A53852ec16d0Ab7E910E6D3C6145",
+     "98852471216743888602735795931826938218328094943227954441306170897257677604316"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 43975,
+  "blockTimestampDelay": 91457
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 19,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x3d40f841000000000000000000000000c1883405c8b19a2adc63ad633c08cfae9a0686ca",
+   "dataAbiValues": {
+    "methodName": "pool_mint",
+    "inputValues": [
+     "0xC1883405C8b19A2aDC63ad633c08cFae9a0686CA"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 31,
+  "blockTimestampDelay": 76823
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000030000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 16,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x8ed0fa7c",
+   "dataAbiValues": {
+    "methodName": "pool_claimFees",
+    "inputValues": []
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 24581,
+  "blockTimestampDelay": 168957
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 20,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x6d8511da000000000000000000000000ca11bde05977b3631167028862be2a173976ca11",
+   "dataAbiValues": {
+    "methodName": "pool_skim",
+    "inputValues": [
+     "0xcA11bde05977b3631167028862bE2a173976CA11"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 9,
+  "blockTimestampDelay": 17
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 21,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x0cf491140000000000000000000000000000000000000000000000000000000000000004000000000000000000000000579f9528692ade79379825eb9a9409658478a1b9000000000000000000000000000000000000000000000000000000000000006d6a1b873f10ea3f6595b6d740f3f71d8e66b38b660684a8d2960e85dc5bf4f65c00000000000000000000000000000000000000000000000000000000000000cb3bdfd0ab6fa0e7ffcd9214d7f6357414f7faffcba654d0def080a106ea625302961728c2fd28ffd6a032dee85fc1ad1e2be37f94338a21ffdbd2eed25342d650",
+   "dataAbiValues": {
+    "methodName": "pool_permit",
+    "inputValues": [
+     "0x0000000000000000000000000000000000000004",
+     "0x579F9528692ade79379825eB9A9409658478A1B9",
+     "109",
+     "47993800256590070859127971941998771579491301490726043511482008445002351703644",
+     "203",
+     "3bdfd0ab6fa0e7ffcd9214d7f6357414f7faffcba654d0def080a106ea625302",
+     "961728c2fd28ffd6a032dee85fc1ad1e2be37f94338a21ffdbd2eed25342d650"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 0,
+  "blockTimestampDelay": 0
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000020000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 22,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0xe9abe4c700000000000000000000000060e04f433c4852e28465b805e73115d59fdbb0110000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000001f",
+   "dataAbiValues": {
+    "methodName": "pool_transferFrom",
+    "inputValues": [
+     "0x60e04F433C4852e28465B805E73115d59FDBB011",
+     "0x0000000000000000000000000000000000000004",
+     "31"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 55368,
+  "blockTimestampDelay": 194399
+ },
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000010000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 19,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0x2b39ee6400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000135573e41165b2d6cace7de19743b81401ac86020000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000005b5792b9f99c8a7f3fafe44daa2deb0f2ee763725e45a259ba4ee8d193d627d84693148cfc22d40e2ddfa040bed297373e8535a7d9df2d33010ab17a85f8311f15b801d991a7ef0dea8b54fd54d170dd58ad29ac313e88151ebc9f0c0000000000",
+   "dataAbiValues": {
+    "methodName": "pool_swap",
+    "inputValues": [
+     "0",
+     "0",
+     "0x135573e41165b2d6cACe7de19743B81401aC8602",
+     "5792b9f99c8a7f3fafe44daa2deb0f2ee763725e45a259ba4ee8d193d627d84693148cfc22d40e2ddfa040bed297373e8535a7d9df2d33010ab17a85f8311f15b801d991a7ef0dea8b54fd54d170dd58ad29ac313e88151ebc9f0c"
+    ]
+   },
+   "AccessList": null,
+   "SkipAccountChecks": false
+  },
+  "blockNumberDelay": 16247,
+  "blockTimestampDelay": 46176
+ }
+]

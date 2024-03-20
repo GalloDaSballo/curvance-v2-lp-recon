@@ -270,7 +270,7 @@ contract Pool is ERC20Permit, ReentrancyGuard {
 
     ///  IPool
     function swap(uint256 amount0Out, uint256 amount1Out, address to, bytes calldata data) external nonReentrant {
-        // if (IPoolFactory(factory).isPaused()) revert("IsPaused()");
+        // if (IPoolFactory(factosdry).isPaused()) revert("IsPaused()");
         if (amount0Out == 0 && amount1Out == 0) revert("InsufficientOutputAmount()");
         (uint256 _reserve0, uint256 _reserve1) = (reserve0, reserve1);
         if (amount0Out >= _reserve0 || amount1Out >= _reserve1) revert("InsufficientLiquidity()");

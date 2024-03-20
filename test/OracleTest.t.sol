@@ -19,8 +19,8 @@ contract OracleTest is Test {
         pool.initialize(address(tokenA), address(tokenB), false);
 
         // Set the pool at 1:1
-        tokenA.transfer(address(pool), 1e18);
-        tokenB.transfer(address(pool), 1e18);
+        tokenA.transfer(address(pool), 100e18);
+        tokenB.transfer(address(pool), 100e18);
 
         pool.mint(address(this));
 
@@ -34,18 +34,14 @@ contract OracleTest is Test {
         uint256 reserve0 = pool.reserve0();
         uint256 reserve1 = pool.reserve1();
 
-
         // // 2 brute force way
 
         // // Deploy a pool with tokens
         // // Swap stufs
         // // See whether we can make the price change
 
-        
-
         console2.log(
-            "calculate_lp_token_price",
-            oracle.calculate_lp_token_price(totalSupply, price0, price1, reserve0, reserve1)
+            "calculate_lp_token_price", oracle.calculate_lp_token_price(totalSupply, price0, price1, reserve0, reserve1)
         );
     }
 
@@ -60,15 +56,15 @@ contract OracleTest is Test {
         pool.initialize(address(tokenA), address(tokenB), false);
 
         // Set the pool at 1:1
-        tokenA.transfer(address(pool), 1000e18);
-        tokenB.transfer(address(pool), 1000e18);
+        tokenA.transfer(address(pool), 100e18);
+        tokenB.transfer(address(pool), 100e18);
 
         pool.mint(address(this));
 
         console.log("pool.balanceOf(address(this))", pool.balanceOf(address(this)));
 
         tokenA.transfer(address(pool), 1_000e18);
-        pool.swap(0, 1e18 * 99 / 100, address(this), hex"");
+        pool.swap(0, 1e18 * 90 / 100, address(this), hex"");
         pool.skim(address(this));
 
         uint256 totalSupply = pool.totalSupply();
@@ -79,7 +75,6 @@ contract OracleTest is Test {
         uint256 reserve0 = pool.reserve0();
         uint256 reserve1 = pool.reserve1();
 
-
         // // 2 brute force way
 
         // // Deploy a pool with tokens
@@ -87,10 +82,10 @@ contract OracleTest is Test {
         // // See whether we can make the price change
 
         console2.log(
-            "calculate_lp_token_price",
-            oracle.calculate_lp_token_price(totalSupply, price0, price1, reserve0, reserve1)
+            "calculate_lp_token_price", oracle.calculate_lp_token_price(totalSupply, price0, price1, reserve0, reserve1)
         );
     }
+
     function testDemoOracleAttackStable() public {
         OracleDemo oracle = new OracleDemo();
         // We'll assume that they are priced at 1:1
@@ -99,7 +94,7 @@ contract OracleTest is Test {
 
         Pool pool = new Pool();
         // Classic unstable Pool
-        pool.initialize(address(tokenA), address(tokenB), false);
+        pool.initialize(address(tokenA), address(tokenB), true);
 
         // Set the pool at 1:1
         tokenA.transfer(address(pool), 1000e18);
@@ -110,7 +105,7 @@ contract OracleTest is Test {
         console.log("pool.balanceOf(address(this))", pool.balanceOf(address(this)));
 
         tokenA.transfer(address(pool), 1_000000e18);
-        pool.swap(0, 1e18 * 99 / 100, address(this), hex"");
+        pool.swap(0, 900e18, address(this), hex"");
         pool.skim(address(this));
 
         uint256 totalSupply = pool.totalSupply();
@@ -121,7 +116,6 @@ contract OracleTest is Test {
         uint256 reserve0 = pool.reserve0();
         uint256 reserve1 = pool.reserve1();
 
-
         // // 2 brute force way
 
         // // Deploy a pool with tokens
@@ -129,13 +123,10 @@ contract OracleTest is Test {
         // // See whether we can make the price change
 
         console2.log(
-            "calculate_lp_token_price",
-            oracle.calculate_lp_token_price(totalSupply, price0, price1, reserve0, reserve1)
+            "calculate_lp_token_price", oracle.calculate_lp_token_price(totalSupply, price0, price1, reserve0, reserve1)
         );
 
-
         uint256 price = oracle.calculate_lp_token_price(totalSupply, price0, price1, reserve0, reserve1);
-
 
         uint256 balB4 = pool.balanceOf(address(this));
         uint256 snapshot = vm.snapshot();
