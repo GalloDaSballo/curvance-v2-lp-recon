@@ -16,7 +16,7 @@ abstract contract Setup is BaseSetup {
     uint256 initialPrice;
 
     uint256 price0 = 1e18;
-    uint256 price1 = 1e18; // anpther
+    uint256 price1 = 1e18; // anpther asd
 
     function setup() internal virtual override {
         pool = new Pool();
