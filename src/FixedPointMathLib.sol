@@ -1,188 +1,185 @@
-// SPDX-License-Identifier: AGPL-3.0-only
-pragma solidity >=0.8.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.4;
 
 /// @notice Arithmetic library with operations for fixed-point numbers.
-/// @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/FixedPointMathLib.sol)
-/// @author Inspired by USM (https://github.com/usmfum/USM/blob/master/contracts/WadMath.sol)
+/// @dev Reduced function scope from full FixedPointMathLib library to only what is needed for Curvance.
+/// @author Solady (https://github.com/vectorized/solady/blob/main/src/utils/FixedPointMathLib.sol)
+/// @author Modified from Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/FixedPointMathLib.sol)
 library FixedPointMathLib {
-    /*//////////////////////////////////////////////////////////////
-                    SIMPLIFIED FIXED POINT OPERATIONS
-    //////////////////////////////////////////////////////////////*/
+    /*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
+    /*                       CUSTOM ERRORS                        */
+    /*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
 
-    uint256 internal constant MAX_UINT256 = 2 ** 256 - 1;
+    /// @dev The operation failed, either due to a multiplication overflow, or a division by a zero.
+    error MulDivFailed();
 
-    uint256 internal constant WAD = 1e18; // The scalar of ETH and most ERC20s.
+    /// @dev The full precision multiply-divide operation failed, either due
+    /// to the result being larger than 256 bits, or a division by a zero.
+    error FullMulDivFailed();
 
-    function mulWadDown(uint256 x, uint256 y) internal pure returns (uint256) {
-        return mulDivDown(x, y, WAD); // Equivalent to (x * y) / WAD rounded down.
-    }
+    /*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
+    /*                  GENERAL NUMBER UTILITIES                  */
+    /*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
 
-    function mulWadUp(uint256 x, uint256 y) internal pure returns (uint256) {
-        return mulDivUp(x, y, WAD); // Equivalent to (x * y) / WAD rounded up.
-    }
-
-    function divWadDown(uint256 x, uint256 y) internal pure returns (uint256) {
-        return mulDivDown(x, WAD, y); // Equivalent to (x * WAD) / y rounded down.
-    }
-
-    function divWadUp(uint256 x, uint256 y) internal pure returns (uint256) {
-        return mulDivUp(x, WAD, y); // Equivalent to (x * WAD) / y rounded up.
-    }
-
-    /*//////////////////////////////////////////////////////////////
-                    LOW LEVEL FIXED POINT OPERATIONS
-    //////////////////////////////////////////////////////////////*/
-
-    function mulDivDown(uint256 x, uint256 y, uint256 denominator) internal pure returns (uint256 z) {
+    /// @dev Calculates `floor(x * y / d)` with full precision.
+    /// Throws if result overflows a uint256 or when `d` is zero.
+    /// Credit to Remco Bloemen under MIT license: https://2π.com/21/muldiv
+    function fullMulDiv(uint256 x, uint256 y, uint256 d) internal pure returns (uint256 result) {
         /// @solidity memory-safe-assembly
         assembly {
-            // Equivalent to require(denominator != 0 && (y == 0 || x <= type(uint256).max / y))
-            if iszero(mul(denominator, iszero(mul(y, gt(x, div(MAX_UINT256, y)))))) { revert(0, 0) }
+            for {} 1 {} {
+                // 512-bit multiply `[p1 p0] = x * y`.
+                // Compute the product mod `2**256` and mod `2**256 - 1`
+                // then use the Chinese Remainder Theorem to reconstruct
+                // the 512 bit result. The result is stored in two 256
+                // variables such that `product = p1 * 2**256 + p0`.
 
-            // Divide x * y by the denominator.
-            z := div(mul(x, y), denominator)
-        }
-    }
+                // Least significant 256 bits of the product.
+                result := mul(x, y) // Temporarily use `result` as `p0` to save gas.
+                let mm := mulmod(x, y, not(0))
+                // Most significant 256 bits of the product.
+                let p1 := sub(mm, add(result, lt(mm, result)))
 
-    function mulDivUp(uint256 x, uint256 y, uint256 denominator) internal pure returns (uint256 z) {
-        /// @solidity memory-safe-assembly
-        assembly {
-            // Equivalent to require(denominator != 0 && (y == 0 || x <= type(uint256).max / y))
-            if iszero(mul(denominator, iszero(mul(y, gt(x, div(MAX_UINT256, y)))))) { revert(0, 0) }
-
-            // If x * y modulo the denominator is strictly greater than 0,
-            // 1 is added to round up the division of x * y by the denominator.
-            z := add(gt(mod(mul(x, y), denominator), 0), div(mul(x, y), denominator))
-        }
-    }
-
-    function rpow(uint256 x, uint256 n, uint256 scalar) internal pure returns (uint256 z) {
-        /// @solidity memory-safe-assembly
-        assembly {
-            switch x
-            case 0 {
-                switch n
-                case 0 {
-                    // 0 ** 0 = 1
-                    z := scalar
-                }
-                default {
-                    // 0 ** n = 0
-                    z := 0
-                }
-            }
-            default {
-                switch mod(n, 2)
-                case 0 {
-                    // If n is even, store scalar in z for now.
-                    z := scalar
-                }
-                default {
-                    // If n is odd, store x in z for now.
-                    z := x
-                }
-
-                // Shifting right by 1 is like dividing by 2.
-                let half := shr(1, scalar)
-
-                for {
-                    // Shift n right by 1 before looping to halve it.
-                    n := shr(1, n)
-                } n {
-                    // Shift n right by 1 each iteration to halve it.
-                    n := shr(1, n)
-                } {
-                    // Revert immediately if x ** 2 would overflow.
-                    // Equivalent to iszero(eq(div(xx, x), x)) here.
-                    if shr(128, x) { revert(0, 0) }
-
-                    // Store x squared.
-                    let xx := mul(x, x)
-
-                    // Round to the nearest number.
-                    let xxRound := add(xx, half)
-
-                    // Revert if xx + half overflowed.
-                    if lt(xxRound, xx) { revert(0, 0) }
-
-                    // Set x to scaled xxRound.
-                    x := div(xxRound, scalar)
-
-                    // If n is even:
-                    if mod(n, 2) {
-                        // Compute z * x.
-                        let zx := mul(z, x)
-
-                        // If z * x overflowed:
-                        if iszero(eq(div(zx, x), z)) {
-                            // Revert if x is non-zero.
-                            if iszero(iszero(x)) { revert(0, 0) }
-                        }
-
-                        // Round to the nearest number.
-                        let zxRound := add(zx, half)
-
-                        // Revert if zx + half overflowed.
-                        if lt(zxRound, zx) { revert(0, 0) }
-
-                        // Return properly scaled zxRound.
-                        z := div(zxRound, scalar)
+                // Handle non-overflow cases, 256 by 256 division.
+                if iszero(p1) {
+                    if iszero(d) {
+                        mstore(0x00, 0xae47f702) // `FullMulDivFailed()`.
+                        revert(0x1c, 0x04)
                     }
+                    result := div(result, d)
+                    break
+                }
+
+                // Make sure the result is less than `2**256`. Also prevents `d == 0`.
+                if iszero(gt(d, p1)) {
+                    mstore(0x00, 0xae47f702) // `FullMulDivFailed()`.
+                    revert(0x1c, 0x04)
+                }
+
+                /*------------------- 512 by 256 division --------------------*/
+
+                // Make division exact by subtracting the remainder from `[p1 p0]`.
+                // Compute remainder using mulmod.
+                let r := mulmod(x, y, d)
+                // `t` is the least significant bit of `d`.
+                // Always greater or equal to 1.
+                let t := and(d, sub(0, d))
+                // Divide `d` by `t`, which is a power of two.
+                d := div(d, t)
+                // Invert `d mod 2**256`
+                // Now that `d` is an odd number, it has an inverse
+                // modulo `2**256` such that `d * inv = 1 mod 2**256`.
+                // Compute the inverse by starting with a seed that is correct
+                // correct for four bits. That is, `d * inv = 1 mod 2**4`.
+                let inv := xor(2, mul(3, d))
+                // Now use Newton-Raphson iteration to improve the precision.
+                // Thanks to Hensel's lifting lemma, this also works in modular
+                // arithmetic, doubling the correct bits in each step.
+                inv := mul(inv, sub(2, mul(d, inv))) // inverse mod 2**8
+                inv := mul(inv, sub(2, mul(d, inv))) // inverse mod 2**16
+                inv := mul(inv, sub(2, mul(d, inv))) // inverse mod 2**32
+                inv := mul(inv, sub(2, mul(d, inv))) // inverse mod 2**64
+                inv := mul(inv, sub(2, mul(d, inv))) // inverse mod 2**128
+                result :=
+                    mul(
+                        // Divide [p1 p0] by the factors of two.
+                        // Shift in bits from `p1` into `p0`. For this we need
+                        // to flip `t` such that it is `2**256 / t`.
+                        or(
+                            mul(sub(p1, gt(r, result)), add(div(sub(0, t), t), 1)),
+                            div(sub(result, r), t)
+                        ),
+                        // inverse mod 2**256
+                        mul(inv, sub(2, mul(d, inv)))
+                    )
+                break
+            }
+        }
+    }
+
+    /// @dev Calculates `floor(x * y / d)` with full precision, rounded up.
+    /// Throws if result overflows a uint256 or when `d` is zero.
+    /// Credit to Uniswap-v3-core under MIT license:
+    /// https://github.com/Uniswap/v3-core/blob/contracts/libraries/FullMath.sol
+    function fullMulDivUp(uint256 x, uint256 y, uint256 d) internal pure returns (uint256 result) {
+        result = fullMulDiv(x, y, d);
+        /// @solidity memory-safe-assembly
+        assembly {
+            if mulmod(x, y, d) {
+                result := add(result, 1)
+                if iszero(result) {
+                    mstore(0x00, 0xae47f702) // `FullMulDivFailed()`.
+                    revert(0x1c, 0x04)
                 }
             }
         }
     }
 
-    /*//////////////////////////////////////////////////////////////
-                        GENERAL NUMBER UTILITIES
-    //////////////////////////////////////////////////////////////*/
+    /// @dev Returns `floor(x * y / d)`.
+    /// Reverts if `x * y` overflows, or `d` is zero.
+    function mulDiv(uint256 x, uint256 y, uint256 d) internal pure returns (uint256 z) {
+        /// @solidity memory-safe-assembly
+        assembly {
+            // Equivalent to require(d != 0 && (y == 0 || x <= type(uint256).max / y))
+            if iszero(mul(d, iszero(mul(y, gt(x, div(not(0), y)))))) {
+                mstore(0x00, 0xad251c27) // `MulDivFailed()`.
+                revert(0x1c, 0x04)
+            }
+            z := div(mul(x, y), d)
+        }
+    }
 
+    /// @dev Returns `ceil(x * y / d)`.
+    /// Reverts if `x * y` overflows, or `d` is zero.
+    function mulDivUp(uint256 x, uint256 y, uint256 d) internal pure returns (uint256 z) {
+        /// @solidity memory-safe-assembly
+        assembly {
+            // Equivalent to require(d != 0 && (y == 0 || x <= type(uint256).max / y))
+            if iszero(mul(d, iszero(mul(y, gt(x, div(not(0), y)))))) {
+                mstore(0x00, 0xad251c27) // `MulDivFailed()`.
+                revert(0x1c, 0x04)
+            }
+            z := add(iszero(iszero(mod(mul(x, y), d))), div(mul(x, y), d))
+        }
+    }
+
+    /// @dev Returns the square root of `x`.
     function sqrt(uint256 x) internal pure returns (uint256 z) {
         /// @solidity memory-safe-assembly
         assembly {
-            let y := x // We start y at x, which will help us make our initial estimate.
-
+            // `floor(sqrt(2**15)) = 181`. `sqrt(2**15) - 181 = 2.84`.
             z := 181 // The "correct" value is 1, but this saves a multiplication later.
 
             // This segment is to get a reasonable initial estimate for the Babylonian method. With a bad
             // start, the correct # of bits increases ~linearly each iteration instead of ~quadratically.
 
-            // We check y >= 2^(k + 8) but shift right by k bits
-            // each branch to ensure that if x >= 256, then y >= 256.
-            if iszero(lt(y, 0x10000000000000000000000000000000000)) {
-                y := shr(128, y)
-                z := shl(64, z)
-            }
-            if iszero(lt(y, 0x1000000000000000000)) {
-                y := shr(64, y)
-                z := shl(32, z)
-            }
-            if iszero(lt(y, 0x10000000000)) {
-                y := shr(32, y)
-                z := shl(16, z)
-            }
-            if iszero(lt(y, 0x1000000)) {
-                y := shr(16, y)
-                z := shl(8, z)
-            }
+            // Let `y = x / 2**r`. We check `y >= 2**(k + 8)`
+            // but shift right by `k` bits to ensure that if `x >= 256`, then `y >= 256`.
+            let r := shl(7, lt(0xffffffffffffffffffffffffffffffffff, x))
+            r := or(r, shl(6, lt(0xffffffffffffffffff, shr(r, x))))
+            r := or(r, shl(5, lt(0xffffffffff, shr(r, x))))
+            r := or(r, shl(4, lt(0xffffff, shr(r, x))))
+            z := shl(shr(1, r), z)
 
-            // Goal was to get z*z*y within a small factor of x. More iterations could
-            // get y in a tighter range. Currently, we will have y in [256, 256*2^16).
-            // We ensured y >= 256 so that the relative difference between y and y+1 is small.
-            // That's not possible if x < 256 but we can just verify those cases exhaustively.
+            // Goal was to get `z*z*y` within a small factor of `x`. More iterations could
+            // get y in a tighter range. Currently, we will have y in `[256, 256*(2**16))`.
+            // We ensured `y >= 256` so that the relative difference between `y` and `y+1` is small.
+            // That's not possible if `x < 256` but we can just verify those cases exhaustively.
 
-            // Now, z*z*y <= x < z*z*(y+1), and y <= 2^(16+8), and either y >= 256, or x < 256.
-            // Correctness can be checked exhaustively for x < 256, so we assume y >= 256.
-            // Then z*sqrt(y) is within sqrt(257)/sqrt(256) of sqrt(x), or about 20bps.
+            // Now, `z*z*y <= x < z*z*(y+1)`, and `y <= 2**(16+8)`, and either `y >= 256`, or `x < 256`.
+            // Correctness can be checked exhaustively for `x < 256`, so we assume `y >= 256`.
+            // Then `z*sqrt(y)` is within `sqrt(257)/sqrt(256)` of `sqrt(x)`, or about 20bps.
 
-            // For s in the range [1/256, 256], the estimate f(s) = (181/1024) * (s+1) is in the range
-            // (1/2.84 * sqrt(s), 2.84 * sqrt(s)), with largest error when s = 1 and when s = 256 or 1/256.
+            // For `s` in the range `[1/256, 256]`, the estimate `f(s) = (181/1024) * (s+1)`
+            // is in the range `(1/2.84 * sqrt(s), 2.84 * sqrt(s))`,
+            // with largest error when `s = 1` and when `s = 256` or `1/256`.
 
-            // Since y is in [256, 256*2^16), let a = y/65536, so that a is in [1/256, 256). Then we can estimate
-            // sqrt(y) using sqrt(65536) * 181/1024 * (a + 1) = 181/4 * (y + 65536)/65536 = 181 * (y + 65536)/2^18.
+            // Since `y` is in `[256, 256*(2**16))`, let `a = y/65536`, so that `a` is in `[1/256, 256)`.
+            // Then we can estimate `sqrt(y)` using
+            // `sqrt(65536) * 181/1024 * (a + 1) = 181/4 * (y + 65536)/65536 = 181 * (y + 65536)/2**18`.
 
-            // There is no overflow risk here since y < 2^136 after the first branch above.
-            z := shr(18, mul(z, add(y, 65536))) // A mul() is saved from starting z at 181.
+            // There is no overflow risk here since `y < 2**136` after the first branch above.
+            z := shr(18, mul(z, add(shr(r, x), 65536))) // A `mul()` is saved from starting `z` at 181.
 
             // Given the worst case multiplicative error of 2.84 above, 7 iterations should be enough.
             z := shr(1, add(z, div(x, z)))
@@ -193,39 +190,10 @@ library FixedPointMathLib {
             z := shr(1, add(z, div(x, z)))
             z := shr(1, add(z, div(x, z)))
 
-            // If x+1 is a perfect square, the Babylonian method cycles between
-            // floor(sqrt(x)) and ceil(sqrt(x)). This statement ensures we return floor.
+            // If `x+1` is a perfect square, the Babylonian method cycles between
+            // `floor(sqrt(x))` and `ceil(sqrt(x))`. This statement ensures we return floor.
             // See: https://en.wikipedia.org/wiki/Integer_square_root#Using_only_integer_division
-            // Since the ceil is rare, we save gas on the assignment and repeat division in the rare case.
-            // If you don't care whether the floor or ceil square root is returned, you can remove this statement.
             z := sub(z, lt(div(x, z), z))
-        }
-    }
-
-    function unsafeMod(uint256 x, uint256 y) internal pure returns (uint256 z) {
-        /// @solidity memory-safe-assembly
-        assembly {
-            // Mod x by y. Note this will return
-            // 0 instead of reverting if y is zero.
-            z := mod(x, y)
-        }
-    }
-
-    function unsafeDiv(uint256 x, uint256 y) internal pure returns (uint256 r) {
-        /// @solidity memory-safe-assembly
-        assembly {
-            // Divide x by y. Note this will return
-            // 0 instead of reverting if y is zero.
-            r := div(x, y)
-        }
-    }
-
-    function unsafeDivUp(uint256 x, uint256 y) internal pure returns (uint256 z) {
-        /// @solidity memory-safe-assembly
-        assembly {
-            // Add 1 to x * y if x % y > 0. Note this will
-            // return 0 instead of reverting if y is zero.
-            z := add(gt(mod(x, y), 0), div(x, y))
         }
     }
 }
