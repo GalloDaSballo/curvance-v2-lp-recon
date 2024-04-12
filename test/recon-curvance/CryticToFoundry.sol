@@ -5,31 +5,18 @@ import {Test} from "forge-std/Test.sol";
 import {console2} from "forge-std/console2.sol";
 import {TargetFunctions} from "./TargetFunctions.sol";
 import {FoundryAsserts} from "@chimera/FoundryAsserts.sol";
-
-interface IPool {
-    function token0() external view returns (address);
-    function token1() external view returns (address);
-    function totalSupply() external view returns (uint256);
-    function balanceOf(address) external view returns (uint256);
-
-    function mint(address to) external returns (uint liquidity);
-    function burn(address to) external returns (uint amount0, uint amount1);
-    function swap(uint amount0Out, uint amount1Out, address to, bytes calldata data) external;
-
-    // TODO: Add rest for invariant testing
-}
+import {IUniV2Pool} from "src/IUniV2Pool.sol";
 
 contract CryticToFoundry is Test, TargetFunctions, FoundryAsserts {
     function setUp() public {
         setup();
-        _setupFork();
     }
 
     function testDemoPseudoFork() public {
         // TODO: Given any target function and foundry assert, test your results
-        console2.log("token0", IPool(uniV2Pool).token0());
-        console2.log("token1", IPool(uniV2Pool).token1());
-        console2.log("totalSupply", IPool(uniV2Pool).totalSupply());
+        console2.log("token0", IUniV2Pool(uniV2Pool).token0());
+        console2.log("token1", IUniV2Pool(uniV2Pool).token1());
+        console2.log("totalSupply", IUniV2Pool(uniV2Pool).totalSupply());
 
         // Shows that our code does indeed work
         // Set the pool at 1:1
@@ -38,9 +25,52 @@ contract CryticToFoundry is Test, TargetFunctions, FoundryAsserts {
 
         console2.log("tokenA.balanceOf(uniV2Pool)", tokenA.balanceOf(uniV2Pool));
 
-        IPool(uniV2Pool).mint(address(this));
-        console2.log("Balance", IPool(uniV2Pool).balanceOf(address(this)));
+        IUniV2Pool(uniV2Pool).mint(address(this));
+        console2.log("Balance", IUniV2Pool(uniV2Pool).balanceOf(address(this)));
     }
+
+
+function test_crytic_price_cannot_change_byThresholdUp_25x() public {
+    console2.log("initialPrice", initialPrice);
+    console2.log("getCurrentPrice()", getCurrentPrice());
+    donateToken1(900000000000000000000);
+    console2.log("getCurrentPrice()", getCurrentPrice());
+    donateBoth(11155111);
+    console2.log("getCurrentPrice()", getCurrentPrice());
+    pool_mint(0x5FCCD64057fB44A80Bcf4faf92D44D6795F764a1);
+    console2.log("getCurrentPrice()", getCurrentPrice());
+}
+
+function test_crytic_price_cannot_change_experiment() public {
+console2.log("initialPrice", initialPrice);
+  console2.log("getCurrentPrice()", getCurrentPrice());
+
+    // NOTE: See how when using the router it's impossible to make the price move too much
+    // This is because the invariant x*y=k is being held
+    // But when we just donate to reserves, that's no longer the case
+    while(getCurrentPrice() < 3006553686384643624) {
+        _doASwap(1e18);
+    }    
+}
+
+function _doASwap(uint256 amt) internal {
+    (uint256 reserve0, uint256 reserve1, ) = IUniV2Pool(uniV2Pool).getReserves();
+    uint256 findAccurateSwapAmountFromLib = _getAmountOut(amt, reserve1, reserve0);
+    // Swap shit
+    donateToken1(amt);
+    swap(findAccurateSwapAmountFromLib, 0, address(this));
+    console2.log("getCurrentPrice()", getCurrentPrice());
+}
+
+    function _getAmountOut(uint amountIn, uint reserveIn, uint reserveOut) internal pure returns (uint amountOut) {
+        require(amountIn > 0, 'UniswapV2Library: INSUFFICIENT_INPUT_AMOUNT');
+        require(reserveIn > 0 && reserveOut > 0, 'UniswapV2Library: INSUFFICIENT_LIQUIDITY');
+        uint amountInWithFee = amountIn * 997;
+        uint numerator = amountInWithFee * reserveOut;
+        uint denominator = reserveIn * 1000 + amountInWithFee;
+        amountOut = numerator / denominator;
+    }
+        
 
 
 }

@@ -4,7 +4,7 @@
     "workerResetLimit": 50,
     "timeout": 0,
     "testLimit": 0,
-    "callSequenceLength": 100,
+    "callSequenceLength": 10,
     "corpusDirectory": "medusa",
     "coverageEnabled": true,
     "deploymentOrder": [

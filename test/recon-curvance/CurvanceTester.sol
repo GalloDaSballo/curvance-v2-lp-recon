@@ -10,8 +10,6 @@ import {CryticAsserts} from "@chimera/CryticAsserts.sol";
 contract CurvanceTester is TargetFunctions, CryticAsserts {
     constructor() payable {
         setup();
-        // Setup Fork
-        _setupFork();
     }
 
 }

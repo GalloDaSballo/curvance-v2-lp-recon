@@ -3,15 +3,23 @@ pragma solidity ^0.8.0;
 
 import {BaseSetup} from "@chimera/BaseSetup.sol";
 import {AnyFactory} from "src/AnyFactory.sol";
-import "src/OracleDemo.sol";
+import "src/OracleCurvance.sol";
 import "src/Pool.sol";
 import "src/MockERC20.sol";
 import {vm} from "@chimera/Hevm.sol";
+import {IUniV2Pool} from "src/IUniV2Pool.sol";
+
+contract MockFactory {
+    function feeTo() external view returns (address) {
+        // Returns 0
+    }
+}
+
 abstract contract Setup is BaseSetup {
-    Pool pool;
-    OracleDemo oracleDemo;
+    OracleCurvance oracle;
     MockERC20 tokenA;
     MockERC20 tokenB;
+    MockFactory mockFactory;
 
     uint256 initialPrice;
 
@@ -21,34 +29,34 @@ abstract contract Setup is BaseSetup {
     address uniV2Pool;
 
     function setup() internal virtual override {
-        pool = new Pool();
-        oracleDemo = new OracleDemo();
-
+        mockFactory = new MockFactory();
         tokenA = new MockERC20();
-        tokenB = new MockERC20();
+        tokenB = new MockERC20();  
 
-        // Classic unstable Pool
-        pool.initialize(address(tokenA), address(tokenB), true);
+        _setupFork();
 
-        // Set the pool at 1:1
-        tokenA.transfer(address(pool), 1000e18);
-        tokenB.transfer(address(pool), 1000e18);
+        // Initial Even Mint
+        tokenA.transfer(uniV2Pool, 1_000_000e18);
+        tokenB.transfer(uniV2Pool, 1_000_000e18);
+        IUniV2Pool(uniV2Pool).mint(address(this));
 
-        pool.mint(address(this));
+        oracle = new OracleCurvance();
+        initialPrice = getCurrentPrice();    
 
-        initialPrice =
-            oracleDemo.calculate_lp_token_price(pool.totalSupply(), price0, price1, pool.reserve0(), pool.reserve1());
+
     }
 
-    function feeTo() external view returns (address) {
-        // Returns 0
+    function getCurrentPrice() public view returns (uint256) {
+        return oracle.getPrice(uniV2Pool);
     }
+
+
 
     function _setupFork() internal {
         AnyFactory factory = new AnyFactory();
         uniV2Pool = factory.deploy();
 
-        vm.store(address(uniV2Pool), bytes32(uint256(5)), bytes32(abi.encode(address(this)))); // Factory, prob unused
+        vm.store(address(uniV2Pool), bytes32(uint256(5)), bytes32(abi.encode(address(mockFactory)))); // Factory, used for feeTo
         vm.store(address(uniV2Pool), bytes32(uint256(6)), bytes32(abi.encode(tokenA))); // Token0
         vm.store(address(uniV2Pool), bytes32(uint256(7)), bytes32(abi.encode((tokenB)))); // Token1
     }
