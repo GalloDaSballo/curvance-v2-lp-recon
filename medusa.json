@@ -8,10 +8,10 @@
     "corpusDirectory": "medusa",
     "coverageEnabled": true,
     "deploymentOrder": [
-      "CryticTester"
+      "CurvanceTester"
     ],
     "targetContracts": [
-      "CryticTester"
+      "CurvanceTester"
     ],
     "targetContractsBalances": [
       "0x27b46536c66c8e3000000"
