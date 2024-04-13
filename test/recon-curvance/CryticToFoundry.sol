@@ -57,6 +57,7 @@ contract CryticToFoundry is Test, TargetFunctions, FoundryAsserts {
         }
     }
 
+    /// @dev Do a swap which doesn't cause a loss to the user
     function _doASwap(uint256 amt) internal {
         (uint256 reserve0, uint256 reserve1,) = IUniV2Pool(uniV2Pool).getReserves();
         uint256 findAccurateSwapAmountFromLib = _getAmountOut(amt, reserve1, reserve0);
@@ -66,6 +67,7 @@ contract CryticToFoundry is Test, TargetFunctions, FoundryAsserts {
         console2.log("getCurrentPrice()", getCurrentPrice());
     }
 
+    /// @dev Router function for correct swaps
     function _getAmountOut(uint256 amountIn, uint256 reserveIn, uint256 reserveOut)
         internal
         pure
