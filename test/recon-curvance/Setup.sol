@@ -31,7 +31,7 @@ abstract contract Setup is BaseSetup {
     function setup() internal virtual override {
         mockFactory = new MockFactory();
         tokenA = new MockERC20();
-        tokenB = new MockERC20();  
+        tokenB = new MockERC20();
 
         _setupFork();
 
@@ -41,16 +41,12 @@ abstract contract Setup is BaseSetup {
         IUniV2Pool(uniV2Pool).mint(address(this));
 
         oracle = new OracleCurvance();
-        initialPrice = getCurrentPrice();    
-
-
+        initialPrice = getCurrentPrice();
     }
 
     function getCurrentPrice() public view returns (uint256) {
         return oracle.getPrice(uniV2Pool);
     }
-
-
 
     function _setupFork() internal {
         AnyFactory factory = new AnyFactory();
