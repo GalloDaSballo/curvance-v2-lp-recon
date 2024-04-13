@@ -30,17 +30,39 @@ contract CryticToFoundry is Test, TargetFunctions, FoundryAsserts {
         console2.log("Balance", IUniV2Pool(uniV2Pool).balanceOf(address(this)));
     }
 
-    /// @dev shows that we can achieve a 25x manipulation via donation
-    function test_crytic_price_cannot_change_byThresholdUp_25x() public {
+
+
+    /// @dev Shows that price can be inflated via donation
+    function test_crytic_price_cannot_change_byThresholdUp_25x2() public {
         console2.log("initialPrice", initialPrice);
         console2.log("getCurrentPrice()", getCurrentPrice());
-        donateToken1(900000000000000000000);
+        donateBoth(120209876281281145568259943);
         console2.log("getCurrentPrice()", getCurrentPrice());
-        donateBoth(11155111);
+        sync();
         console2.log("getCurrentPrice()", getCurrentPrice());
-        pool_mint(0x5FCCD64057fB44A80Bcf4faf92D44D6795F764a1);
-        console2.log("getCurrentPrice()", getCurrentPrice());
+        assertTrue(crytic_price_cannot_change_byThresholdUp(), "Price is manipulatable"); // Fails
     }
+
+    /// @dev Shows that price can be inflated via donation, swap is ued to synch
+    function test_crytic_price_cannot_change_byThresholdUp_another() public {
+        donateBoth(39368246411128115772265981);
+        swap(9, 30, 0x8AC6D911f195d7b477522421241f57E3d7FC7928);
+        assertTrue(crytic_price_cannot_change_byThresholdUp(), "Price is manipulatable"); // Fails
+    }
+
+    /// @dev Shows that price can be inflated via donation, swap is ued to synch
+    function test_crytic_price_cannot_change_byThresholdUp_another_single_sided() public {
+        console2.log("initialPrice", initialPrice);
+        console2.log("getCurrentPrice()", getCurrentPrice());
+        donateToken0(39368246411128115772265981);
+        console2.log("getCurrentPrice()", getCurrentPrice());
+        swap(9, 30, 0x8AC6D911f195d7b477522421241f57E3d7FC7928);
+        console2.log("getCurrentPrice()", getCurrentPrice());
+        assertTrue(crytic_price_cannot_change_byThresholdUp(), "Price is manipulatable"); // Fails
+    }
+          
+
+
 
     /// @dev shows that the formula holds only if you use the swap router
     /// The swap router maximizes the tokens out, meaning it doesn't impact the reserves
@@ -52,9 +74,14 @@ contract CryticToFoundry is Test, TargetFunctions, FoundryAsserts {
         // NOTE: See how when using the router it's impossible to make the price move too much
         // This is because the invariant x*y=k is being held
         // But when we just donate to reserves, that's no longer the case
-        while (getCurrentPrice() < 3006553686384643624) {
+        uint256 counter;
+        while (getCurrentPrice() < 3006553686384643624 && counter < 10_000) {
             _doASwap(1e18);
+            counter++;
         }
+        assertTrue(getCurrentPrice() < 3006553686384643624, "Can manipulate via router");
+
+        console2.log("getCurrentPrice()", getCurrentPrice());
     }
 
     /// @dev Do a swap which doesn't cause a loss to the user

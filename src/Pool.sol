@@ -94,7 +94,6 @@ contract Pool is ERC20Permit, ReentrancyGuard {
         return 0;
     }
 
-
     ///  IPool
     function metadata()
         external
@@ -191,9 +190,7 @@ contract Pool is ERC20Permit, ReentrancyGuard {
             reserve1CumulativeLast += _reserve1 * timeElapsed;
         }
 
-        if (timeElapsed > periodSize) {
-
-        }
+        if (timeElapsed > periodSize) {}
         reserve0 = balance0;
         reserve1 = balance1;
         blockTimestampLast = blockTimestamp;
@@ -377,12 +374,11 @@ contract Pool is ERC20Permit, ReentrancyGuard {
         return _getAmountOut(amountIn, tokenIn, _reserve0, _reserve1);
     }
 
-    function _getAmountOut(
-        uint256 amountIn,
-        address tokenIn,
-        uint256 _reserve0,
-        uint256 _reserve1
-    ) internal view returns (uint256) {
+    function _getAmountOut(uint256 amountIn, address tokenIn, uint256 _reserve0, uint256 _reserve1)
+        internal
+        view
+        returns (uint256)
+    {
         if (stable) {
             uint256 xy = _k(_reserve0, _reserve1);
             _reserve0 = (_reserve0 * 1e18) / decimals0;

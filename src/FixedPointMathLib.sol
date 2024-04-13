@@ -85,10 +85,7 @@ library FixedPointMathLib {
                         // Divide [p1 p0] by the factors of two.
                         // Shift in bits from `p1` into `p0`. For this we need
                         // to flip `t` such that it is `2**256 / t`.
-                        or(
-                            mul(sub(p1, gt(r, result)), add(div(sub(0, t), t), 1)),
-                            div(sub(result, r), t)
-                        ),
+                        or(mul(sub(p1, gt(r, result)), add(div(sub(0, t), t), 1)), div(sub(result, r), t)),
                         // inverse mod 2**256
                         mul(inv, sub(2, mul(d, inv)))
                     )
